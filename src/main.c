@@ -2,7 +2,7 @@
     main.c -- main file for roguelike programmed in C 
 */
 
-#include <ncurses.h>
+#include "../include/rogue.h"
 
 
 int main(void)
@@ -18,7 +18,7 @@ int main(void)
     }
 
     endwin();
-    
+
     return 0;
 }
 
