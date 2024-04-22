@@ -12,7 +12,7 @@ Entity* createPlayer(Position start_pos)
     return newPlayer;
 }
 
-void hadleInput(int input)
+void handleInput(int input)
 {
     switch(input)
     {

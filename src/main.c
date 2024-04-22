@@ -20,7 +20,7 @@ int main(void)
     player = createPlayer(start_pos);
     mvaddch(player->pos.y, player->pos.x, player->ch);
     
-    while((ch = getch())) 
+    while(ch = getch())
     {
         if (ch == 'q')
         {
