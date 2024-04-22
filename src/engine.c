@@ -11,7 +11,7 @@ void gameLoop(void)
 {
     int ch;
 
-    mvaddch(player->pos.y, player->pos.x, player_.ch);
+    mvaddch(player->pos.y, player->pos.x, player->ch);
 
     while(ch = getch())
     {
