@@ -16,21 +16,24 @@ void hadleInput(int input)
 {
     switch(input)
     {
-        // move up
+        // move up on 'k'
         case 'k':
             player->pos.y--;
             break;
-        // move down
+        // move down on 'j'
         case 'j':
             player->pos.y++;
             break;
-        // move left
+        // move left on 'h'
         case 'h':
             player->pos.x--;
             break;
-        // move right
+        // move right on 'l'
         case 'l':
             player->pos.x++;
+            break;
+        // any unhandled input
+        default:
             break;
     }
 }

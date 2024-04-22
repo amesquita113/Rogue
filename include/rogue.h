@@ -16,4 +16,11 @@ typedef struct
     char ch;
 } Entity;
 
+// player.c functions
+Entity* createPlayer(Position start_pos);
+void handleInput(int input);
+
+// externs
+extern Entity* player;
+
 #endif
