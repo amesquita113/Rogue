@@ -10,6 +10,13 @@ typedef struct
     int x;
 } Position;
 
+// Tile struct -- Wall and other map items
+typedef struct
+{
+    char ch;
+    bool walkable;
+} Tile;
+
 typedef struct
 {
     Position pos;
@@ -21,11 +28,18 @@ void cursesSetup(void);
 void gameLoop(void);
 void closeGame(void);
 
+// map.c functions
+Tile** createMapTiles(void);
+void freeMap(void);
+
 // player.c functions
 Entity* createPlayer(Position start_pos);
 void handleInput(int input);
 
 // externs
+extern const int MAP_HEIGHT;
+extern const int MAP_WIDTH;
 extern Entity* player;
+extern Tile** map;
 
 #endif
