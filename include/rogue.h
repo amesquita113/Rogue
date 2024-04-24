@@ -3,6 +3,7 @@
 
 #include <ncurses.h>
 #include <stdlib.h>
+#include <time.h>
 
 typedef struct
 {
@@ -16,6 +17,16 @@ typedef struct
     char ch;
     bool walkable;
 } Tile;
+
+// Room struct -- Used in auto generating maps
+typedef struct
+{
+    int height;
+    int width;
+    Position pos;
+    Position center;
+} Room;
+
 
 typedef struct
 {
@@ -42,6 +53,10 @@ void freeMap(void);
 Entity* createPlayer(Position start_pos);
 void handleInput(int input);
 void movePlayer(Position newPos);
+
+// room.c functions
+Room createRoom(int y, int x, int height, int width);
+void addRoomToMap(Room room);
 
 // externs
 extern const int MAP_HEIGHT;
