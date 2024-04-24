@@ -38,8 +38,8 @@ Position setupMap(void)
         addRoomToMap(rooms[i]);
     }
 
-    start_pos.y = rooms[0].center.y;
-    start_pos.x = rooms[0].center.x;
+    start_pos.y = rooms[1].center.y;
+    start_pos.x = rooms[1].center.x;
 
     free(rooms);
 
