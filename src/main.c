@@ -16,19 +16,28 @@ int main(void)
 {
 
     Position start_pos;
+    bool compatibleTerminal;
 
-    cursesSetup();
+    compatibleTerminal = cursesSetup();
+
+    if (compatibleTerminal)
+    {
     
-    srand(time(NULL));
+        srand(time(NULL));
 
 
-    map = createMapTiles();
-    start_pos = setupMap();
-    player = createPlayer(start_pos);
+        map = createMapTiles();
+        start_pos = setupMap();
+        player = createPlayer(start_pos);
 
-    gameLoop();
+        gameLoop();
 
-    closeGame();
+        closeGame();
+    }
+    else
+    {
+        endwin();
+    }
     
     return 0;
 }
