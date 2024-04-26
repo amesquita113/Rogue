@@ -1,7 +1,7 @@
 #include "../include/rogue.h"
 
 
-Entity* createPlayer(Position start_pos)
+Entity* createPlayer(Position start_pos, char player_name[10])
 {
     Entity* newPlayer = calloc(1, sizeof(Entity));
 
@@ -9,6 +9,12 @@ Entity* createPlayer(Position start_pos)
     newPlayer->pos.x = start_pos.x;
     newPlayer->ch = '@';
     newPlayer->color = COLOR_PAIR(VISIBLE_COLOR);
+    newPlayer->health_max = 15;
+    newPlayer->health = newPlayer->health_max;
+    newPlayer->magic_max = 10;
+    newPlayer->magic = newPlayer->magic_max;
+    newPlayer->name[10] = player_name;
+
 
     return newPlayer;
 }

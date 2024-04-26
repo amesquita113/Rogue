@@ -20,12 +20,13 @@ typedef struct
 // Tile struct -- Wall and other map items
 typedef struct
 {
-    char ch;
-    int color;
-    bool walkable;
-    bool transparent;
-    bool visible;
-    bool seen;
+    char ch;            // character for tile
+    int color;          // color of tile
+    int item_id;        // ID number of item, if any in the space
+    bool walkable;      // is tile walkable
+    bool transparent;   // if tile is transparent/not displayed
+    bool visible;       // if tile is in the field of view
+    bool seen;          // if tile has been seen already by the player    
 } Tile;
 
 // Room struct -- Used in auto generating maps
@@ -38,12 +39,32 @@ typedef struct
 } Room;
 
 
+// Entity struct -- Used for storing player and monster data
+typedef struct
+{
+    Position pos;
+    char ch;
+    char name[10];
+    int color;
+    int health_max;
+    int health;
+    int magic_max;
+    int magic;
+    int xp;
+    int level;
+} Entity;
+
+//  Item struct -- Used for storing information about items in game
 typedef struct
 {
     Position pos;
     char ch;
     int color;
-} Entity;
+    char name[15];
+    int item_type;
+    int item_value;
+} Item;
+
 
 // draw.c functions
 void drawMap(void);
@@ -61,7 +82,7 @@ Position setupMap(void);
 void freeMap(void);
 
 // player.c functions
-Entity* createPlayer(Position start_pos);
+Entity* createPlayer(Position start_pos, char player_name[10]);
 void handleInput(int input);
 void movePlayer(Position newPos);
 

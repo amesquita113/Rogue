@@ -16,8 +16,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/xpadrex/Programming/C/Rogue/include",
-      "program": "/home/xpadrex/Programming/C/Rogue/include/build/Debug/outDebug",
+      "cwd": "/home/xpadrex/Programming/C/Rogue/src",
+      "program": "/home/xpadrex/Programming/C/Rogue/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -15,6 +15,8 @@ Tile** map;         // pointer to pointers in the Tile struct
 int main(void)
 {
 
+    char name[] = "Andre";
+    
     Position start_pos;
     bool compatibleTerminal;
 
@@ -28,7 +30,7 @@ int main(void)
 
         map = createMapTiles();
         start_pos = setupMap();
-        player = createPlayer(start_pos);
+        player = createPlayer(start_pos, name);
 
         gameLoop();
 
