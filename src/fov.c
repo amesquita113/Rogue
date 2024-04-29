@@ -1,5 +1,5 @@
 /*
-    fov.c -- Feild of view function
+    fov.c -- Feild of view function, shows a 15 space circle of light around the player
 */
 
 #include "../include/rogue.h"
