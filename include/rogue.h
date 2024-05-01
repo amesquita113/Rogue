@@ -99,6 +99,9 @@ bool isInMap(int y, int x);
 bool lineOfSight(Position origin, Position target);
 int getSign(int a);
 
+// messages.c functioins
+void statusMessage(char *message);
+
 // externs
 extern const int MAP_HEIGHT;
 extern const int MAP_WIDTH;

@@ -63,4 +63,8 @@ void movePlayer(Position newPos)
         player->pos.x = newPos.x;
         makeFOV(player);
     }
+    else 
+    {
+        statusMessage("You walk into a wall!");
+    }
 }
