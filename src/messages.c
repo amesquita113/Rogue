@@ -4,9 +4,18 @@
 
 #include "../include/rogue.h"
 
+// define global variable for our status message 
+char message[79];
 
-void statusMessage(char *message)
+// function to copy the a string into the message global variable to be used as a status message
+void statusMessage(char msg[79])
+{
+    strncpy(message, msg, 79);
+}
+
+// function to draw the HUD for the player
+void drawPlayerHUD(void)
 {
     mvaddstr( 1, 1, message);
-
+    mvaddstr( 2, 1, player->name);
 }

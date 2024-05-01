@@ -4,6 +4,7 @@
 
 #include "../include/rogue.h"
 
+// function to create a full map of wall tiles "#"
 Tile** createMapTiles(void)
 {
     Tile** tiles = calloc(MAP_HEIGHT, sizeof(Tile*));
@@ -25,17 +26,18 @@ Tile** createMapTiles(void)
     return tiles;
 }
 
+// creates rooms for map based on n_rooms variable and calls the function to connect the rooms
 Position setupMap(void)
 {
     int y, x, height, width, n_rooms;
-    n_rooms = (rand() % 11) + 5;
+    n_rooms = (rand() % 11) + 6;
     Room* rooms = calloc(n_rooms, sizeof(Room));
     Position start_pos;
 
     for (int i = 0; i < n_rooms; i++)
     {
         y = (rand() % (MAP_HEIGHT - 10)) + 2;
-        x = (rand() % (MAP_WIDTH - 20)) + 1;
+        x = (rand() % (MAP_WIDTH - 20)) + 16;
         height = (rand() % 7) + 3;
         width = (rand() % 15) + 5;
         rooms[i] = createRoom(y, x, height, width);

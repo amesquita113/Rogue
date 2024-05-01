@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
 
 
 // color pairs
@@ -101,11 +102,13 @@ int getSign(int a);
 
 // messages.c functioins
 void statusMessage(char *message);
+void drawPlayerHUD(void);
 
 // externs
 extern const int MAP_HEIGHT;
 extern const int MAP_WIDTH;
 extern Entity* player;
 extern Tile** map;
+extern char message[79];
 
 #endif

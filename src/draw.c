@@ -6,20 +6,20 @@
 
 void drawMap(void)
 {
-    for (int y = 0; y < MAP_HEIGHT; y++)
+    for (int y = 1; y < MAP_HEIGHT; y++)
     {
         for (int x = 0; x < MAP_WIDTH; x++)
         {
             if (map[y][x].visible)
             {
-                mvaddch(y, x, map[y][x].ch | map[y][x].color);
+                mvaddch( y, x, map[y][x].ch | map[y][x].color);
             }
             else if (map[y][x].seen)
             {
-                mvaddch(y, x, map[y][x].ch | COLOR_PAIR(SEEN_COLOR));
+                mvaddch( y, x, map[y][x].ch | COLOR_PAIR(SEEN_COLOR));
             }
             else{
-                mvaddch(y, x, ' ');
+                mvaddch( y, x, ' ');
             }
         }
     }
@@ -32,7 +32,11 @@ void drawEntity(Entity* entity)
 
 void drawEverything(void)
 {
-    clear();
+    //clear();
     drawMap();
     drawEntity(player);
+    drawPlayerHUD();
+
+    // Clear status message after each turn
+    statusMessage("");
 }

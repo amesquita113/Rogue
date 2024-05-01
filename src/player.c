@@ -17,7 +17,7 @@ Entity* createPlayer(Position start_pos, char player_name[10])
     newPlayer->health = newPlayer->health_max;
     newPlayer->magic_max = 10;
     newPlayer->magic = newPlayer->magic_max;
-    newPlayer->name[10] = *player_name;
+    newPlayer->name = player_name;
 
 
     return newPlayer;
@@ -48,6 +48,7 @@ void handleInput(int input)
             break;
         // any unhandled input
         default:
+            statusMessage("I don't know what that is.");
             break;
     }
 
