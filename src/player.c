@@ -17,7 +17,7 @@ Entity* createPlayer(Position start_pos, char player_name[10])
     newPlayer->health = newPlayer->health_max;
     newPlayer->magic_max = 10;
     newPlayer->magic = newPlayer->magic_max;
-    newPlayer->name = player_name;
+    strncpy(newPlayer->name, player_name, 10);
 
 
     return newPlayer;
