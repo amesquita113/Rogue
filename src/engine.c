@@ -1,3 +1,8 @@
+/*
+    engine.c -- main display engine.  Initializes curses, checks for color terminal then handles
+                main game loop.
+*/
+
 #include "../include/rogue.h"
 
 bool cursesSetup(void)
