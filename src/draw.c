@@ -32,7 +32,7 @@ void drawEntity(Entity* entity)
 
 void drawEverything(void)
 {
-    //clear();
+    clear();
     drawMap();
     drawEntity(player);
     drawPlayerHUD();

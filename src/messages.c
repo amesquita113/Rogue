@@ -17,5 +17,5 @@ void statusMessage(char msg[79])
 void drawPlayerHUD(void)
 {
     mvaddstr( 1, 1, message);
-    mvaddstr( 2, 1, player->name);
+    mvaddstr( 2, 2, player->name);
 }

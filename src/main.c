@@ -5,8 +5,8 @@
 #include "../include/rogue.h"
 #include <ncurses.h>
 
-const int MAP_HEIGHT = 40;
-const int MAP_WIDTH = 64;
+const int MAP_HEIGHT = 30;
+const int MAP_WIDTH = 77;
 
 Entity* player;
 Tile** map;         // pointer to pointers in the Tile struct

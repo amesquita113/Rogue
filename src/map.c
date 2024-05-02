@@ -37,7 +37,7 @@ Position setupMap(void)
     for (int i = 0; i < n_rooms; i++)
     {
         y = (rand() % (MAP_HEIGHT - 10)) + 2;
-        x = (rand() % (MAP_WIDTH - 20)) + 16;
+        x = (rand() % (MAP_WIDTH - 20)) + 2;
         height = (rand() % 7) + 3;
         width = (rand() % 15) + 5;
         rooms[i] = createRoom(y, x, height, width);
