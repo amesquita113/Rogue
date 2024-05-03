@@ -30,14 +30,14 @@ Tile** createMapTiles(void)
 Position setupMap(void)
 {
     int y, x, height, width, n_rooms;
-    n_rooms = (rand() % 11) + 6;
+    n_rooms = (rand() % 11) + 10;
     Room* rooms = calloc(n_rooms, sizeof(Room));
     Position start_pos;
 
     for (int i = 0; i < n_rooms; i++)
     {
-        y = (rand() % (MAP_HEIGHT - 10)) + 2;
-        x = (rand() % (MAP_WIDTH - 20)) + 2;
+        y = (rand() % (MAP_HEIGHT - 10)) + 1;
+        x = (rand() % (MAP_WIDTH - 20)) + 1;
         height = (rand() % 7) + 3;
         width = (rand() % 15) + 5;
         rooms[i] = createRoom(y, x, height, width);

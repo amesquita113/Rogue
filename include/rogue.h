@@ -107,6 +107,8 @@ void drawPlayerHUD(void);
 // externs
 extern const int MAP_HEIGHT;
 extern const int MAP_WIDTH;
+extern const int DRAW_WINDOW_HEIGHT;
+extern const int DRAW_WINDOW_WIDTH;
 extern Entity* player;
 extern Tile** map;
 extern char message[79];

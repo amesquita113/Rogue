@@ -7,7 +7,7 @@
 
 bool cursesSetup(void)
 {
-    resizeterm(39, 100);
+    //resizeterm(39, 100);
     initscr();
     noecho();
     curs_set(0);

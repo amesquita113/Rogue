@@ -48,7 +48,7 @@ void handleInput(int input)
             break;
         // any unhandled input
         default:
-            statusMessage("I don't know what that is.");
+            statusMessage("I don't know what to do with that!");
             break;
     }
 
