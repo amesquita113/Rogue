@@ -105,6 +105,8 @@ void statusMessage(char *message);
 void drawPlayerHUD(void);
 
 // externs
+extern const int WINDOW_X;
+extern const int WINDOW_Y;
 extern const int MAP_HEIGHT;
 extern const int MAP_WIDTH;
 extern const int DRAW_WINDOW_HEIGHT;

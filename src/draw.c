@@ -4,40 +4,37 @@
 
 #include "../include/rogue.h"
 
+
+/*
 void drawMap(void)
 {
-    int x, y;
-    int map_x, map_y;  
+    //int x = 15;
+    //int y = 2;
+    int map_x = 0;
+    int map_y = 0;  
     
-    if (player->pos.y < DRAW_WINDOW_HEIGHT) {
-        int y = 2;
-        int map_y = 1;
+    if (player->pos.y <= DRAW_WINDOW_HEIGHT) {
+        map_y = 0;
     }
     else {
-        int y = DRAW_WINDOW_HEIGHT + 2;
-        int map_y = DRAW_WINDOW_HEIGHT + 1;
+        //y = DRAW_WINDOW_HEIGHT + 1;
+        map_y = DRAW_WINDOW_HEIGHT;
     }
 
-    if (player->pos.x < DRAW_WINDOW_WIDTH) {
-        int x = 15;
-        int map_x = 1;
+    if (player->pos.x <= DRAW_WINDOW_WIDTH) {
+        //x = 14;
+        map_x = 0;
     }
     else {   
-        int x = DRAW_WINDOW_WIDTH + 15;
-        int map_x = DRAW_WINDOW_WIDTH + 1;
+        //x = DRAW_WINDOW_WIDTH + 14;
+        map_x = DRAW_WINDOW_WIDTH;
     }
 
     
-    for (int iy = 0; iy < DRAW_WINDOW_HEIGHT; iy++)
+    for (int iy = 1; iy < DRAW_WINDOW_HEIGHT; iy++)
     {
-        y++;
-        map_y++;
-
-        for (int ix = 0; ix < DRAW_WINDOW_WIDTH; ix++)
+        for (int ix = 1; ix < DRAW_WINDOW_WIDTH; ix++)
         {
-            x++;
-            map_x++;
-
             if (map[map_y][map_x].visible)
             {
                 mvaddch( y, x, map[map_y][map_x].ch | map[map_y][map_x].color);
@@ -49,34 +46,52 @@ void drawMap(void)
             else{
                 mvaddch( map_y, map_x, ' ');
             }
+
+            x++;
+            map_x++;
         }
+
+        y++;
+        map_y++;
     }
 }
+*/
+
+void drawMap(void)
+{ 
+  for (int y = 0; y < MAP_HEIGHT; y++)
+  { 
+    for (int x = 0; x < MAP_WIDTH; x++)
+    { 
+      mvaddch(y + WINDOW_Y, x + WINDOW_X, map[y][x].ch | map[y][x].color);
+    } 
+  } 
+} 
 
 void drawEntity(Entity* entity)
 {
     int x, y;
-    int map_x, map_y;  
+    //int map_x, map_y;  
     
-    if (entity->pos.y < (MAP_HEIGHT / 2)) 
+    if (entity->pos.y <= DRAW_WINDOW_HEIGHT) 
     {
-        int y = entity->pos.y + 2;
+        y = entity->pos.y + WINDOW_Y;
         // int map_y = 1;
     }
     else 
     {
-        int y = entity->pos.y + DRAW_WINDOW_HEIGHT + 2;
+        y = entity->pos.y - DRAW_WINDOW_HEIGHT + WINDOW_Y;
         // int map_y = DRAW_WINDOW_HEIGHT + 1;
     }
 
-    if (entity->pos.x < (MAP_WIDTH / 2))
+    if (entity->pos.x <= DRAW_WINDOW_WIDTH)
     {
-        int x = entity->pos.x + 15;
+        x = entity->pos.x + WINDOW_X;
         // int map_x = 1;
     }
     else
     {   
-        int x = entity->pos.x + DRAW_WINDOW_WIDTH + 15;
+        x = entity->pos.x - DRAW_WINDOW_WIDTH + WINDOW_X;
         // int map_x = DRAW_WINDOW_WIDTH + 1;
     }
 
