@@ -18,4 +18,5 @@ void drawPlayerHUD(void)
 {
     mvaddstr( 1, 1, message);
     mvaddstr( 2, 2, player->name);
+    mvprintw( 3, 1, "y: %d x: %d", player->pos.y, player->pos.x);   // for testing
 }

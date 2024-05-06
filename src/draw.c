@@ -13,7 +13,7 @@ void drawMap(void)
     int map_x = 0;
     int map_y = 0;  
     
-    if (player->pos.y <= DRAW_WINDOW_HEIGHT) {
+    if (player->pos.y < DRAW_WINDOW_HEIGHT) {
         map_y = 0;
     }
     else {
@@ -21,7 +21,7 @@ void drawMap(void)
         map_y = DRAW_WINDOW_HEIGHT;
     }
 
-    if (player->pos.x <= DRAW_WINDOW_WIDTH) {
+    if (player->pos.x < DRAW_WINDOW_WIDTH) {
         //x = 14;
         map_x = 0;
     }
@@ -30,7 +30,9 @@ void drawMap(void)
         map_x = DRAW_WINDOW_WIDTH;
     }
 
-    
+    mvprintw( 4, 1, "map y: %d x: %d", map_y, map_x);   // for testing
+
+
     for (int y = 0; y < DRAW_WINDOW_HEIGHT; y++)
     {
         for (int x = 0; x < DRAW_WINDOW_WIDTH; x++)
@@ -52,6 +54,8 @@ void drawMap(void)
             map_x++;
         }
 
+
+        map_x += DRAW_WINDOW_WIDTH + 1;
         map_y++;
     }
 }
@@ -75,7 +79,7 @@ void drawEntity(Entity* entity)
     int x, y;
     //int map_x, map_y;  
     
-    if (entity->pos.y <= DRAW_WINDOW_HEIGHT) 
+    if (entity->pos.y < DRAW_WINDOW_HEIGHT) 
     {
         y = entity->pos.y + WINDOW_Y;
         // int map_y = 1;
@@ -86,7 +90,7 @@ void drawEntity(Entity* entity)
         // int map_y = DRAW_WINDOW_HEIGHT + 1;
     }
 
-    if (entity->pos.x <= DRAW_WINDOW_WIDTH)
+    if (entity->pos.x < DRAW_WINDOW_WIDTH)
     {
         x = entity->pos.x + WINDOW_X;
         // int map_x = 1;

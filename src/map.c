@@ -38,8 +38,8 @@ Position setupMap(void)
     {
         y = (rand() % (MAP_HEIGHT - 10)) + 1;
         x = (rand() % (MAP_WIDTH - 20)) + 1;
-        height = (rand() % 7) + 3;
-        width = (rand() % 15) + 5;
+        height = (rand() % 7) + 4;
+        width = (rand() % 15) + 6;
         rooms[i] = createRoom(y, x, height, width);
         addRoomToMap(rooms[i]);
 
