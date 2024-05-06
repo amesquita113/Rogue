@@ -5,7 +5,7 @@
 #include "../include/rogue.h"
 
 
-/*
+//*
 void drawMap(void)
 {
     //int x = 15;
@@ -31,42 +31,44 @@ void drawMap(void)
     }
 
     
-    for (int iy = 1; iy < DRAW_WINDOW_HEIGHT; iy++)
+    for (int y = 0; y < DRAW_WINDOW_HEIGHT; y++)
     {
-        for (int ix = 1; ix < DRAW_WINDOW_WIDTH; ix++)
+        for (int x = 0; x < DRAW_WINDOW_WIDTH; x++)
         {
             if (map[map_y][map_x].visible)
             {
-                mvaddch( y, x, map[map_y][map_x].ch | map[map_y][map_x].color);
+                mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | map[map_y][map_x].color);
             }
             else if (map[map_y][map_x].seen)
             {
-                mvaddch( y, x, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
+                mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
             }
             else{
-                mvaddch( map_y, map_x, ' ');
+                mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
+
+                //mvaddch( map_y, map_x, ' '); 
             }
 
-            x++;
             map_x++;
         }
 
-        y++;
         map_y++;
     }
 }
-*/
+//*/
 
+/*
 void drawMap(void)
 { 
   for (int y = 0; y < MAP_HEIGHT; y++)
   { 
     for (int x = 0; x < MAP_WIDTH; x++)
     { 
-      mvaddch(y + WINDOW_Y, x + WINDOW_X, map[y][x].ch | map[y][x].color);
+      mvaddch( y, x, map[y][x].ch | map[y][x].color);
     } 
   } 
 } 
+*/
 
 void drawEntity(Entity* entity)
 {
