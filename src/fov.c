@@ -13,7 +13,8 @@ void makeFOV(Entity* player)
 
     map[player->pos.y][player->pos.x].visible = true;
     map[player->pos.y][player->pos.x].seen = true;
-
+    
+    
     for (y = player->pos.y - RADIUS; y < player->pos.y + RADIUS; y++)
     {
         for (x = player->pos.x - RADIUS; x < player->pos.x + RADIUS; x++)

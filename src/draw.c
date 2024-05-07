@@ -30,7 +30,8 @@ void drawMap(void)
         map_x = DRAW_WINDOW_WIDTH;
     }
 
-    mvprintw( 4, 1, "map y: %d x: %d", map_y, map_x);   // for testing
+    mvaddstr( 4, 1, " MAP");                         // Map cords 
+    mvprintw( 5, 1, "y: %d x: %d", map_y, map_x);   // for testing
 
 
     for (int y = 0; y < DRAW_WINDOW_HEIGHT; y++)
@@ -46,16 +47,16 @@ void drawMap(void)
                 mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
             }
             else{
-                mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
+                //mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
 
-                //mvaddch( map_y, map_x, ' '); 
+                mvaddch( y + WINDOW_Y, x + WINDOW_X, ' '); 
             }
 
             map_x++;
         }
 
 
-        map_x += DRAW_WINDOW_WIDTH + 1;
+        //map_x = map_x + DRAW_WINDOW_WIDTH + 1;
         map_y++;
     }
 }
@@ -79,7 +80,7 @@ void drawEntity(Entity* entity)
     int x, y;
     //int map_x, map_y;  
     
-    if (entity->pos.y < DRAW_WINDOW_HEIGHT) 
+    if (entity->pos.y <= DRAW_WINDOW_HEIGHT) 
     {
         y = entity->pos.y + WINDOW_Y;
         // int map_y = 1;
@@ -90,7 +91,7 @@ void drawEntity(Entity* entity)
         // int map_y = DRAW_WINDOW_HEIGHT + 1;
     }
 
-    if (entity->pos.x < DRAW_WINDOW_WIDTH)
+    if (entity->pos.x <= DRAW_WINDOW_WIDTH)
     {
         x = entity->pos.x + WINDOW_X;
         // int map_x = 1;
