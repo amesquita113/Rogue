@@ -47,16 +47,16 @@ void drawMap(void)
                 mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
             }
             else{
-                //mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
+                mvaddch( y + WINDOW_Y, x + WINDOW_X, map[map_y][map_x].ch | COLOR_PAIR(SEEN_COLOR));
 
-                mvaddch( y + WINDOW_Y, x + WINDOW_X, ' '); 
+                //mvaddch( y + WINDOW_Y, x + WINDOW_X, ' '); 
             }
 
             map_x++;
         }
 
 
-        //map_x = map_x + DRAW_WINDOW_WIDTH + 1;
+        map_x = map_x + DRAW_WINDOW_WIDTH + 1;
         map_y++;
     }
 }
