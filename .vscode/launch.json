@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+    
     {
       "type": "lldb",
       "request": "launch",
@@ -16,8 +17,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/xpadrex/Programming/C/Rogue/src",
-      "program": "/home/xpadrex/Programming/C/Rogue/src/build/Debug/outDebug",
+      "cwd": "/home/xpadrex/Programming/Rogue/src",
+      "program": "/home/xpadrex/Programming/Rogue/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
